@@ -28,7 +28,7 @@ class TeamController extends Controller
         $manager = new ImageManager(new Driver());
         $name_gen = hexdec(uniqid()).'.'.$request->file('image')->getClientOriginalExtension();
         $img = $manager->read($request->file('image'));
-        $img->resize(550,670);
+        $img->resize(270,350);
 
         $img->toPng()->save(base_path('public/upload/team/'.$name_gen));
         $save_url = 'upload/team/'.$name_gen;
@@ -64,7 +64,7 @@ class TeamController extends Controller
         $manager = new ImageManager(new Driver());
         $name_gen = hexdec(uniqid()).'.'.$request->file('image')->getClientOriginalExtension();
         $img = $manager->read($request->file('image'));
-        $img->resize(550,670);
+        $img->resize(270,350);
 
         $img->toPng()->save(base_path('public/upload/team/'.$name_gen));
         $save_url = 'upload/team/'.$name_gen;
