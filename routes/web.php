@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\TeamController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -41,7 +42,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/site/setting', 'SiteSetting')->name('site.setting');
         Route::post('/site/update', 'SiteUpdate')->name('site.update');
         // contact message admin view
-    Route::get('/contact/message', 'AdminContactMessage')->name('contact.message');
+        Route::get('/contact/message', 'AdminContactMessage')->name('contact.message');
     });
 }); //End middleware Admin Group Controller
 
@@ -54,3 +55,19 @@ Route::controller(ContactController::class)->group(function () {
     Route::get('/contact', 'ContactUs')->name('contact.us');
     Route::post('/store/contact', 'StoreContactUs')->name('store.contact');
 });
+
+// Admin Group Middleware 
+Route::middleware(['auth', 'role:admin'])->group(function () {
+
+    /// Team All Route 
+    Route::controller(TeamController::class)->group(function () {
+
+        Route::get('/all/team', 'AllTeam')->name('all.team');
+        Route::get('/add/team', 'AddTeam')->name('add.team');
+        Route::post('/team/store', 'StoreTeam')->name('team.store');
+        Route::get('/edit/team/{id}', 'EditTeam')->name('edit.team');
+        Route::post('/team/update', 'UpdateTeam')->name('team.update');
+        Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
+        
+    });
+}); // End Admin Group Middleware 

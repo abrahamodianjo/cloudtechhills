@@ -12,15 +12,15 @@
     <!--navigation-->
     <ul class="metismenu" id="menu">
         <li>
-            <a href="{{route('admin.dashboard')}}">
+            <a href="{{ route('admin.dashboard') }}">
                 <div class="parent-icon"><i class='fadeIn animated bx bx-cctv'></i>
                 </div>
                 <div class="menu-title">Dashboard</div>
             </a>
         </li>
-   
+
         <li class="menu-label">Management System</li>
-    
+
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-home-alt'></i>
@@ -28,6 +28,19 @@
                 <div class="menu-title">Home</div>
             </a>
             <ul>
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class='bx bx-radio-circle'></i>
+                        </div>
+                        <div class="menu-title">Team Member </div>
+                    </a>
+                    <ul>
+                        <li> <a href="{{ route('all.team') }}"><i class='bx bx-radio-circle'></i>All Team</a>
+                        </li>
+                        <li> <a href="{{ route('add.team') }}"><i class='bx bx-radio-circle'></i>Add Team</a>
+                        </li>
+                    </ul>
+                </li>
                 <li> <a href="ecommerce-products.html"><i class='bx bx-radio-circle'></i>Products</a>
                 </li>
                 <li> <a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Product Details</a>
@@ -39,8 +52,8 @@
             </ul>
         </li>
 
-      
-    
+       
+
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='fadeIn animated bx bx-buildings'></i>
@@ -59,7 +72,7 @@
             </ul>
         </li>
 
-    
+
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='lni lni-network'></i>
@@ -79,8 +92,8 @@
         </li>
 
 
-       
-    
+
+
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='fadeIn animated bx bx-news'></i>
@@ -98,10 +111,10 @@
                 </li>
             </ul>
         </li>
-        
-        
-       
-    
+
+
+
+
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='fadeIn animated bx bx-id-card'></i>
@@ -112,10 +125,10 @@
                 <li> <a href="{{ route('site.setting') }}"><i class='bx bx-radio-circle'></i>Site Setting</a>
                 </li>
                 <li> <a href="{{ route('contact.message') }}"><i class='bx bx-radio-circle'></i>Contact Us Messages </a>
-                </li> 
+                </li>
             </ul>
         </li>
-        
+
     </ul>
     <!--end navigation-->
 </div>
