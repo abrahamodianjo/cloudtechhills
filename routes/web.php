@@ -2,11 +2,16 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Backend\SettingController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [UserController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -27,6 +32,25 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/password/update', [AdminController::class, 'AdminPasswordUpdate'])->name('admin.password.update');
+
+
+
+    /// Site Setting All Route 
+    Route::controller(SettingController::class)->group(function () {
+
+        Route::get('/site/setting', 'SiteSetting')->name('site.setting');
+        Route::post('/site/update', 'SiteUpdate')->name('site.update');
+        // contact message admin view
+    Route::get('/contact/message', 'AdminContactMessage')->name('contact.message');
+    });
 }); //End middleware Admin Group Controller
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+
+
+
+/// Frontend Contact us 
+Route::controller(ContactController::class)->group(function () {
+    Route::get('/contact', 'ContactUs')->name('contact.us');
+    Route::post('/store/contact', 'StoreContactUs')->name('store.contact');
+});

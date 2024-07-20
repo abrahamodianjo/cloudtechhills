@@ -1,0 +1,68 @@
+<div class="section-block grey-bg jarallax" data-jarallax data-speed="0.9" style="background-image: url('http://via.placeholder.com/1510x720')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-12">
+                <div class="section-heading">
+                    <h3 class="semi-bold">Need a Quick Query ?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                </div>
+                <!-- Contact icons Start -->
+                <div>
+                    <div class="contact-icon-box">
+                        <i class="icon-phone-book"></i>
+                        <h4>Direct line numbers</h4>
+                        <h5>+11 (0) 123 456 7890 / +11 (0) 123 456 7890</h5>
+                    </div>
+
+                    <div class="contact-icon-box">
+                        <i class="icon-opened-email-outlined-interface-symbol"></i>
+                        <h4>Our Email</h4>
+                        <h5>specthemes@gmail.com / example@mail.com</h5>
+                    </div>
+
+                    <div class="contact-icon-box">
+                        <i class="icon-location"></i>
+                        <h4>Our Locations</h4>
+                        <h5>New York, NY Sheram 113 / London England Sheram</h5>
+                    </div>
+                </div>
+                <!-- Contact icons End -->
+            </div>
+            <div class="col-md-6 col-sm-12 col-12">
+                <div class="pl-45-md">
+                    <div class="callback-block">
+                        <h4 class="bold text-center">Make a request now.</h4>
+                        <div class="section-heading-line line-thin"></div>
+                        <div class="text-content-big text-center mt-20">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                        </div>
+                        <form class="primary-form mt-30">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <input type="text" name="name" placeholder="Name*">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <input type="text" name="phone" placeholder="Phone Number*">
+                                </div>
+                                <div class="col-12">
+                                    <select name="subject">
+                                        <option>Subject</option>
+                                        <option>Development Manager</option>
+                                        <option>Project Lead</option>
+                                        <option>Solutions Analyst</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea placeholder="Message*" name="message"></textarea>
+                                </div>
+                            </div>
+                            <div class="text-center mt-15">
+                                <button type="submit" class="button-md button-primary text-uppercase ml-0">Request a call back</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
