@@ -5,13 +5,13 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Edit Banner</div>
+            <div class="breadcrumb-title pe-3">Edit Count up</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Edit Banner</li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit Count up</li>
                     </ol>
                 </nav>
             </div>
@@ -25,10 +25,10 @@
                     <div class="col-lg-8">
                         <div class="card">
 
-                            <form action="{{ route('plan.update') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('countups.update') }}" method="post" enctype="multipart/form-data">
                                 @csrf
 
-                                <input type="hidden" name="id" value="{{ $banner->id }}">
+                                <input type="hidden" name="id" value="{{ $countups->id }}">
 
                                 <div class="card-body">
                                     <div class="row mb-3">
@@ -37,7 +37,7 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="text" name="caption" class="form-control"
-                                                value="{{ $banner->caption }}" />
+                                                value="{{ $countups->caption }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="text" name="title" class="form-control"
-                                                value="{{ $banner->title }}" />
+                                                value="{{ $countups->title }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="text" name="sub_title" class="form-control"
-                                                value="{{ $banner->sub_title }}" />
+                                                value="{{ $countups->sub_title }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="text" name="team_members" class="form-control"
-                                                value="{{ $banner->team_members }}" />
+                                                value="{{ $countups->team_members }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="text" name="team_members_note" class="form-control"
-                                                value="{{ $banner->team_members_note }}" />
+                                                value="{{ $countups->team_members_note }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -82,7 +82,7 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="text" name="happy_client" class="form-control"
-                                                value="{{ $banner->happy_clients }}" />
+                                                value="{{ $countups->happy_clients }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -91,7 +91,7 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="text" name="happy_clients_note" class="form-control"
-                                                value="{{ $banner->happy_clients_note }}" />
+                                                value="{{ $countups->happy_clients_note }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -109,7 +109,7 @@
                                             <h6 class="mb-0"> </h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <img id="showImage" src="{{ asset($banner->image) }}" alt="Admin"
+                                            <img id="showImage" src="{{ asset($countups->image) }}" alt="Admin"
                                                 class="rounded-circle p-1 bg-primary" width="80">
                                         </div>
                                     </div>
