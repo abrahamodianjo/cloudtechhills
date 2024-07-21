@@ -9,7 +9,7 @@ use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\PlanController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\FeaturesController;
-use App\Models\Features;
+use App\Http\Controllers\Backend\CountupsController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -109,6 +109,17 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/features/{id}', 'EditFeatures')->name('edit.features');
         Route::post('/features/update', 'UpdateFeatures')->name('features.update');
         Route::get('/delete/features/{id}', 'DeleteFeatures')->name('delete.features');
+        
+    });
+    
+
+     /// Countups All Route 
+     Route::controller(CountupsController::class)->group(function () {
+
+        Route::get('/all/countups', 'AllCountups')->name('all.countups');
+        Route::get('/edit/countups/{id}', 'EditCountups')->name('edit.countups');
+        Route::post('/countups/update', 'UpdateCountups')->name('countups.update');
+       
         
     });
 }); // End Admin Group Middleware 

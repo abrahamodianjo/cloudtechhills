@@ -8,7 +8,7 @@
 						<div class="section-heading-line line-thin"></div>
 					</div>
 					<div class="text-content-big mt-25">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.</p>
+						<p>Empowering our clients to achieve excellence with tailored solutions, dedicated support, and innovative strategies. Your success is our mission, and we are committed to helping you reach new heights</p>
 					</div>
 					<a href="#" class="button-simple mt-15">Become a client <i class="fa fa-arrow-right primary-color"></i></a>
 				</div>

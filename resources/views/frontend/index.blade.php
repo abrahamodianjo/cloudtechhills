@@ -21,10 +21,6 @@
 @include('frontend.home.clients')
 <!-- Clients END -->
 
-<!--Chart Section START-->
-@include('frontend.home.chart')
-<!--Chart Section END-->
-
 <!--Team Section START-->
 @include('frontend.home.team')
 <!--Team Section END-->
