@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\PlanController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -68,6 +69,18 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/team/{id}', 'EditTeam')->name('edit.team');
         Route::post('/team/update', 'UpdateTeam')->name('team.update');
         Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
+        
+    });
+
+     /// Plan All Route 
+     Route::controller(PlanController::class)->group(function () {
+
+        Route::get('/all/plan', 'AllPlan')->name('all.plan');
+        Route::get('/add/plan', 'AddPlan')->name('add.plan');
+        Route::post('/plan/store', 'StorePlan')->name('plan.store');
+        Route::get('/edit/plan/{id}', 'EditPlan')->name('edit.plan');
+        Route::post('/plan/update', 'UpdatePlan')->name('plan.update');
+        Route::get('/delete/plan/{id}', 'DeletePlan')->name('delete.plan');
         
     });
 }); // End Admin Group Middleware 

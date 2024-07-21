@@ -27,38 +27,21 @@
                 </div>
                 <div class="menu-title">Home</div>
             </a>
+
             <ul>
-                <li>
-                    <a href="javascript:;" class="has-arrow">
-                        <div class="parent-icon"><i class='bx bx-radio-circle'></i>
-                        </div>
-                        <div class="menu-title">Team Member </div>
-                    </a>
-                    <ul>
-                        <li> <a href="{{ route('all.team') }}"><i class='bx bx-radio-circle'></i>All Team</a>
-                        </li>
-                        <li> <a href="{{ route('add.team') }}"><i class='bx bx-radio-circle'></i>Add Team</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:;" class="has-arrow">
-                        <div class="parent-icon"><i class='bx bx-radio-circle'></i>
-                        </div>
-                        <div class="menu-title">Membership Plans </div>
-                    </a>
-                    <ul>
-                        <li> <a href="{{ route('all.team') }}"><i class='bx bx-radio-circle'></i>All Plans</a>
-                        </li>
-                        <li> <a href="{{ route('add.team') }}"><i class='bx bx-radio-circle'></i>Add Plan</a>
-                        </li>
-                    </ul>
-                </li>
-                
+                <li> <a href="{{ route('all.team') }}"><i class='bx bx-radio-circle'></i> Banner </a>
+            </ul>
+
+            <ul>
+                <li> <a href="{{ route('all.team') }}"><i class='bx bx-radio-circle'></i>Team Members </a>
+            </ul>
+
+            <ul>
+                <li> <a href="{{ route('all.plan') }}"><i class='bx bx-radio-circle'></i>Membership Plans </a>
             </ul>
         </li>
 
-       
+
 
         <li>
             <a href="javascript:;" class="has-arrow">
