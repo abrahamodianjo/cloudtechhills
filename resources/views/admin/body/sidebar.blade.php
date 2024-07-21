@@ -29,7 +29,7 @@
             </a>
 
             <ul>
-                <li> <a href="{{ route('all.team') }}"><i class='bx bx-radio-circle'></i> Banner </a>
+                <li> <a href="{{ route('all.banner') }}"><i class='bx bx-radio-circle'></i> Banner </a>
             </ul>
 
             <ul>

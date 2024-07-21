@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\PlanController;
+use App\Http\Controllers\Backend\BannerController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -81,6 +82,19 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/plan/{id}', 'EditPlan')->name('edit.plan');
         Route::post('/plan/update', 'UpdatePlan')->name('plan.update');
         Route::get('/delete/plan/{id}', 'DeletePlan')->name('delete.plan');
+        
+    });
+
+    
+     /// Banner All Route 
+     Route::controller(BannerController::class)->group(function () {
+
+        Route::get('/all/banner', 'AllBanner')->name('all.banner');
+        Route::get('/add/banner', 'AddBanner')->name('add.banner');
+        Route::post('/banner/store', 'StoreBanner')->name('banner.store');
+        Route::get('/edit/banner/{id}', 'EditBanner')->name('edit.banner');
+        Route::post('/banner/update', 'UpdateBanner')->name('banner.update');
+        Route::get('/delete/banner/{id}', 'DeleteBanner')->name('delete.banner');
         
     });
 }); // End Admin Group Middleware 
