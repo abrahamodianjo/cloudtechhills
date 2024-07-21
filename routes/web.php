@@ -8,6 +8,8 @@ use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\PlanController;
 use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Backend\FeaturesController;
+use App\Models\Features;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -95,6 +97,18 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/banner/{id}', 'EditBanner')->name('edit.banner');
         Route::post('/banner/update', 'UpdateBanner')->name('banner.update');
         Route::get('/delete/banner/{id}', 'DeleteBanner')->name('delete.banner');
+        
+    });
+
+    /// Features All Route 
+    Route::controller(FeaturesController::class)->group(function () {
+
+        Route::get('/all/features', 'AllFeatures')->name('all.features');
+        Route::get('/add/features', 'AddFeatures')->name('add.features');
+        Route::post('/features/store', 'StoreFeatures')->name('features.store');
+        Route::get('/edit/features/{id}', 'EditFeatures')->name('edit.features');
+        Route::post('/features/update', 'UpdateFeatures')->name('features.update');
+        Route::get('/delete/features/{id}', 'DeleteFeatures')->name('delete.features');
         
     });
 }); // End Admin Group Middleware 

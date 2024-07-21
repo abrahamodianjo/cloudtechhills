@@ -31,6 +31,9 @@
             <ul>
                 <li> <a href="{{ route('all.banner') }}"><i class='bx bx-radio-circle'></i> Banner </a>
             </ul>
+            <ul>
+                <li> <a href="{{ route('all.features') }}"><i class='bx bx-radio-circle'></i> Features </a>
+            </ul>
 
             <ul>
                 <li> <a href="{{ route('all.team') }}"><i class='bx bx-radio-circle'></i>Team Members </a>

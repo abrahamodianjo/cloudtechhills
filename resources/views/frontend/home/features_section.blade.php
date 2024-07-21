@@ -1,3 +1,7 @@
+@php
+    $features = App\Models\Features::latest()->get();
+@endphp
+
 <div class="section-block grey-bg background-shape-3">
 	<div class="container">
 		<div class="section-heading text-center">
@@ -6,72 +10,19 @@
 			<div class="section-heading-line line-thin"></div>
 		</div>
 		<div class="row mt-30">
+			@foreach ($features as $item)
 			<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 				<div class="features-box">
 					<div class="features-box-icon">
-						<i class="icon-locked-combination-padlock-stroke"></i>
+						<i class="{{ $item->icon }}"></i>
 					</div>
 					<div class="features-box-content">
-						<h3>Customer Satisfaction Value</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+						<h3>{{ $item->title }}</h3>
+						<p>{{ $item->sub_title }}</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-				<div class="features-box">
-					<div class="features-box-icon">
-						<i class="icon-mail-1"></i>
-					</div>
-					<div class="features-box-content">
-						<h3>Inventory Management</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-				<div class="features-box">
-					<div class="features-box-icon">
-						<i class="icon-chess"></i>
-					</div>
-					<div class="features-box-content">
-						<h3>Business Consultancy</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-				<div class="features-box">
-					<div class="features-box-icon">
-						<i class="icon-setting"></i>
-					</div>
-					<div class="features-box-content">
-						<h3>Product Design & Branding</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-				<div class="features-box">
-					<div class="features-box-icon">
-						<i class="icon-megaphone"></i>
-					</div>
-					<div class="features-box-content">
-						<h3>Financial Services</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-				<div class="features-box">
-					<div class="features-box-icon">
-						<i class="icon-graph-3"></i>
-					</div>
-					<div class="features-box-content">
-						<h3>Business Accounting</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-					</div>
-				</div>
-			</div>
+			@endforeach
 		</div>
 		<div class="text-center mt-30">
 			<a href="#" class="button-primary-bordered button-md text-uppercase">Become a client</a>
