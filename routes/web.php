@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\FeaturesController;
 use App\Http\Controllers\Backend\CountupsController;
 use App\Http\Controllers\Backend\ClientsController;
+use App\Http\Controllers\ParallaxController;
 use App\Http\Controllers\TestmonialsController;
 
 use Illuminate\Support\Facades\Route;
@@ -50,6 +51,13 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/site/update', 'SiteUpdate')->name('site.update');
         // contact message admin view
         Route::get('/contact/message', 'AdminContactMessage')->name('contact.message');
+    });
+
+    /// Parallax Setting All Route 
+    Route::controller(ParallaxController::class)->group(function () {
+
+        Route::get('/parallax/setting', 'ParallaxSetting')->name('parallax.setting');
+        Route::post('/parallax/update', 'ParallaxUpdate')->name('parallax.update');
     });
 }); //End middleware Admin Group Controller
 
@@ -119,8 +127,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
      /// Countups All Route 
      Route::controller(CountupsController::class)->group(function () {
 
-        Route::get('/all/countups', 'AllCountups')->name('all.countups');
-        Route::get('/edit/countups/{id}', 'EditCountups')->name('edit.countups');
+     
+        Route::get('/edit/countups', 'EditCountups')->name('edit.countups');
         Route::post('/countups/update', 'UpdateCountups')->name('countups.update');
        
         

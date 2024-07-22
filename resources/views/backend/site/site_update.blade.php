@@ -104,6 +104,23 @@
 
                                             </div>
                                     </div>
+                                    <br />
+                                    <br /><br />
+
+                                    <div class="row mb-3">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0"> Call back Background  Image </h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="file" name="additional_image" class="form-control" />
+                                            <br />  
+
+                                            <img src="{{ asset($site->additional_image) }}" alt=""
+                                                style="width: 270px; height:140px;">
+                                              
+
+                                            </div>
+                                    </div>
 
                                   
 

@@ -35,7 +35,7 @@
                 <li> <a href="{{ route('all.features') }}"><i class='bx bx-radio-circle'></i> Features </a>
             </ul>
             <ul>
-                <li> <a href="{{ route('all.countups') }}"><i class='bx bx-radio-circle'></i> Count up section </a>
+                <li> <a href="{{ route('edit.countups') }}"><i class='bx bx-radio-circle'></i> Count up section </a>
             </ul>
             <ul>
                 <li> <a href="{{ route('all.clients') }}"><i class='bx bx-radio-circle'></i>Our Clients</a>
@@ -47,6 +47,9 @@
 
             <ul>
                 <li> <a href="{{ route('all.plan') }}"><i class='bx bx-radio-circle'></i>Membership Plans </a>
+            </ul>
+            <ul>
+                <li> <a href="{{ route('parallax.setting') }}"><i class='bx bx-radio-circle'></i>Parallax</a>
             </ul>
             <ul>
                 <li> <a href="{{ route('all.testmonials') }}"><i class='bx bx-radio-circle'></i>Testmonials </a>

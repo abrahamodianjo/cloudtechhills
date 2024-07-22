@@ -11,17 +11,11 @@ use Illuminate\Http\Request;
 
 class CountupsController extends Controller
 {
-    public function AllCountups()
+  
+
+    public function EditCountups()
     {
-
-        $countups = Countups::latest()->get();
-        return view('backend.countups.all_countups', compact('countups'));
-    } // End Method 
-
-
-    public function EditCountups($id)
-    {
-        $countups = Countups::findOrFail($id);
+        $countups = Countups::find(1);
         return view('backend.countups.edit_countups', compact('countups'));
     } // End Method 
 
