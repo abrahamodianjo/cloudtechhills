@@ -20,10 +20,10 @@
 <!-- Clients START -->
 @include('frontend.home.clients')
 <!-- Clients END -->
-
+{{-- 
 <!--Team Section START-->
 @include('frontend.home.team')
-<!--Team Section END-->
+<!--Team Section END--> --}}
 
 <!-- Pricing START-->
 @include('frontend.home.pricing')

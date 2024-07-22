@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\CountupsController;
 use App\Http\Controllers\Backend\ClientsController;
 use App\Http\Controllers\ParallaxController;
 use App\Http\Controllers\TestmonialsController;
+use App\Http\Controllers\AboutUsController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -69,6 +70,12 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
 Route::controller(ContactController::class)->group(function () {
     Route::get('/contact', 'ContactUs')->name('contact.us');
     Route::post('/store/contact', 'StoreContactUs')->name('store.contact');
+});
+
+/// Frontend About us 
+Route::controller(AboutUsController::class)->group(function () {
+    Route::get('/about_us', 'AboutUs')->name('about.us');
+    
 });
 
 // Admin Group Middleware 

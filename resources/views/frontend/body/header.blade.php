@@ -35,7 +35,7 @@
 			<ul class="nav-menu align-to-right">
 				<li><a href="{{url('/')}}">Home</a>	
 				</li>
-				<li><a href="about-us.html">About us</a>
+				<li><a href="{{route('about.us')}}">About us</a>
 				</li>
 				<li><a href="services.html">Services</a>
 				</li>
