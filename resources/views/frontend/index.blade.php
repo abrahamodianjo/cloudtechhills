@@ -57,7 +57,5 @@
 @include('frontend.home.blog')
 <!--Blog Posts END-->
   
-<!-- Action Box START -->
-@include('frontend.home.action_box')
-<!-- Action Box END -->
+
 @endsection
