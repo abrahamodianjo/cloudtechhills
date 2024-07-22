@@ -48,6 +48,9 @@
             <ul>
                 <li> <a href="{{ route('all.plan') }}"><i class='bx bx-radio-circle'></i>Membership Plans </a>
             </ul>
+            <ul>
+                <li> <a href="{{ route('all.testmonials') }}"><i class='bx bx-radio-circle'></i>Testmonials </a>
+            </ul>
         </li>
 
 

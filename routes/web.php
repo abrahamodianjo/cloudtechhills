@@ -11,6 +11,8 @@ use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\FeaturesController;
 use App\Http\Controllers\Backend\CountupsController;
 use App\Http\Controllers\Backend\ClientsController;
+use App\Http\Controllers\TestmonialsController;
+
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -133,6 +135,18 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
             Route::get('/edit/clients/{id}', 'EditClients')->name('edit.clients');
             Route::post('/clients/update', 'UpdateClients')->name('clients.update');
             Route::get('/delete/clients/{id}', 'DeleteClients')->name('delete.clients');
+            
+        });
+
+          /// testmonials All Route 
+          Route::controller(TestmonialsController::class)->group(function () {
+
+            Route::get('/all/testmonials', 'AllTestmonials')->name('all.testmonials');
+            Route::get('/add/testmonials', 'AddTestmonials')->name('add.testmonials');
+            Route::post('/testmonials/store', 'StoreTestmonials')->name('testmonials.store');
+            Route::get('/edit/testmonials/{id}', 'EditTestmonials')->name('edit.testmonials');
+            Route::post('/testmonials/update', 'UpdateTestmonials')->name('testmonials.update');
+            Route::get('/delete/testmonials/{id}', 'DeleteTestmonials')->name('delete.testmonials');
             
         });
 }); // End Admin Group Middleware 
