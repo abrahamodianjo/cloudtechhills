@@ -1,30 +1,40 @@
 @extends('frontend.main_master')
 @section('main')
     <!--Breadcrumb START-->
-    <div class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
+    @php
+        $Aboutusbanner = App\Models\Aboutus::find(1);
+        $piechart = App\Models\PieChart::find(1);
+        $piechartapproach = App\Models\PieChartApproach::latest()->get();
+        $clients = App\Models\Clients::latest()->get();
+        $team = App\Models\Team::latest()->get();
+    @endphp
+
+    <div class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6"
+        style="	background-image: url('{{ asset($Aboutusbanner->image) }}');">
         <div class="container text-center">
-            <h1>About Us </h1>
+            <h1>{{ $Aboutusbanner->title }} </h1>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="page-about-2.html">About Us II</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
+
+                <li><a href="{{ asset('about.us') }}">{{ $Aboutusbanner->title }}</a></li>
             </ul>
         </div>
     </div>
     <!--Breadcrumb END-->
 
     <!--Pie Charts Section START-->
+
     <div class="section-block">
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-sm-5 col-12">
                     <div class="dots-bg-2 pr-30-md">
                         <div class="section-heading text-left">
-                            <small class="primary-color">Insight for the connected world</small>
-                            <h4 class="semi-bold">Your single source for buying market research.</h4>
+                            <small class="primary-color">{{ $piechart->caption }}</small>
+                            <h4 class="semi-bold">{{ $piechart->title }}</h4>
                             <div class="section-heading-line line-thin"></div>
                             <div class="mt-30">
-                                <a href="#" class="button-simple">Become a client <i
+                                <a href="{{ route('contact.us') }}" class="button-simple">Become a client <i
                                         class="fa fa-arrow-right primary-color"></i></a>
                             </div>
                         </div>
@@ -32,42 +42,20 @@
                 </div>
                 <div class="col-md-7 col-sm-7 col-12 text-right">
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 col-12">
-                            <div class="pie-chart pie-chart-sm">
-                                <div class="chart-percent">
-                                    <span class="chart" data-percent="75" data-width="5" data-size="125"
-                                        data-color="#0570fb">
-                                        <span class="percent"></span>
-                                    </span>
+                        @foreach ($piechartapproach as $item)
+                            <div class="col-md-4 col-sm-4 col-12">
+                                <div class="pie-chart pie-chart-sm">
+                                    <div class="chart-percent">
+                                        <span class="chart" data-percent="{{ $item->percentage }}" data-width="5"
+                                            data-size="125" data-color="#0570fb">
+                                            <span class="percent"></span>
+                                        </span>
+                                    </div>
+                                    <h4>{{ $item->service }}</h4>
+                                    <h5 class="italic libre-baskerville">{{ $item->approach }}</h5>
                                 </div>
-                                <h4>UX & Ecommerce</h4>
-                                <h5 class="italic libre-baskerville">Professional Approach</h5>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-12">
-                            <div class="pie-chart pie-chart-sm">
-                                <div class="chart-percent">
-                                    <span class="chart" data-percent="60" data-width="5" data-size="125"
-                                        data-color="#0570fb">
-                                        <span class="percent"></span>
-                                    </span>
-                                </div>
-                                <h4>Content Marketing</h4>
-                                <h5 class="italic libre-baskerville">Thought Leadership</h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-12">
-                            <div class="pie-chart pie-chart-sm">
-                                <div class="chart-percent">
-                                    <span class="chart" data-percent="60" data-width="5" data-size="125"
-                                        data-color="#0570fb">
-                                        <span class="percent"></span>
-                                    </span>
-                                </div>
-                                <h4>Content Marketing</h4>
-                                <h5 class="italic libre-baskerville">Thought Leadership</h5>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -161,9 +149,7 @@
     <!-- Testmonials Section END -->
 
     <!-- Clients START -->
-    @php
-        $clients = App\Models\Clients::latest()->get();
-    @endphp
+
     <div class="section-block">
         <div class="container">
             <div class="row">
@@ -195,9 +181,6 @@
     <!-- Clients END -->
 
     <!--Team Section START-->
-    @php
-        $team = App\Models\Team::latest()->get();
-    @endphp
     <div class="section-block grey-bg">
         <div class="background-shape bs-right"></div>
         <div class="container">
@@ -205,28 +188,32 @@
                 <small class="grey-color font-weight-normal">YOUR COMPETITIVE EDGE</small>
                 <h3 class="semi-bold font-size-32 mt-0">Team Of Professionals</h3>
                 <div class="section-heading-line line-thin"></div>
-                <p>Our creative team is a team of experience expert who are here to ensure you meet your goals as expect and on time</p>
+                <p>Our creative team is a team of experience expert who are here to ensure you meet your goals as expect and
+                    on time</p>
             </div>
             <div class="row mt-60">
-                @foreach ($team as $item) 
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="team-box-3">
-                        <img src="{{ asset($item->image) }}" alt="team">
-                        <div class="team-box-3-info">
-                            <h4>{{ $item->name }}</h4>
-                            <span>{{ $item->position }}</span>
-                            <ul>
-                                <a href="http://www.facebook.com/{{ $item->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="http://www.twitter.com/{{ $item->twitter }}"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="http://www.linkedin.com/{{ $item->linkedin }}"><i class="fab fa-linkedin"></i></a></li>
-                            </ul>
+                @foreach ($team as $item)
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="team-box-3">
+                            <img src="{{ asset($item->image) }}" alt="team">
+                            <div class="team-box-3-info">
+                                <h4>{{ $item->name }}</h4>
+                                <span>{{ $item->position }}</span>
+                                <ul>
+                                    <a href="http://www.facebook.com/{{ $item->facebook }}"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="http://www.twitter.com/{{ $item->twitter }}"><i
+                                                class="fab fa-twitter"></i></a></li>
+                                    <li><a href="http://www.linkedin.com/{{ $item->linkedin }}"><i
+                                                class="fab fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
-       
+
             </div>
-           
+
         </div>
     </div>
     <!--Team Section END-->

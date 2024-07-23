@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('about_us', function (Blueprint $table) {
+        Schema::create('pie_charts', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
-            $table->text('title')->nullable();
+            $table->string('caption')->nullable();
+            $table->string('title')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('about_us');
+        Schema::dropIfExists('pie_charts');
     }
 };

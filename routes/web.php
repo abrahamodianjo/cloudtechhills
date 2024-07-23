@@ -62,23 +62,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
 }); //End middleware Admin Group Controller
 
-Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+///////Admin Group Middleware //////////////////////////////////////////////////////////////////
 
-
-
-/// Frontend Contact us 
-Route::controller(ContactController::class)->group(function () {
-    Route::get('/contact', 'ContactUs')->name('contact.us');
-    Route::post('/store/contact', 'StoreContactUs')->name('store.contact');
-});
-
-/// Frontend About us 
-Route::controller(AboutUsController::class)->group(function () {
-    Route::get('/about_us', 'AboutUs')->name('about.us');
-    
-});
-
-// Admin Group Middleware 
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
     /// Team All Route 
@@ -90,11 +75,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/team/{id}', 'EditTeam')->name('edit.team');
         Route::post('/team/update', 'UpdateTeam')->name('team.update');
         Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
-        
     });
 
-     /// Plan All Route 
-     Route::controller(PlanController::class)->group(function () {
+    /// Plan All Route 
+    Route::controller(PlanController::class)->group(function () {
 
         Route::get('/all/plan', 'AllPlan')->name('all.plan');
         Route::get('/add/plan', 'AddPlan')->name('add.plan');
@@ -102,12 +86,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/plan/{id}', 'EditPlan')->name('edit.plan');
         Route::post('/plan/update', 'UpdatePlan')->name('plan.update');
         Route::get('/delete/plan/{id}', 'DeletePlan')->name('delete.plan');
-        
     });
 
-    
-     /// Banner All Route 
-     Route::controller(BannerController::class)->group(function () {
+
+    /// Banner All Route 
+    Route::controller(BannerController::class)->group(function () {
 
         Route::get('/all/banner', 'AllBanner')->name('all.banner');
         Route::get('/add/banner', 'AddBanner')->name('add.banner');
@@ -115,7 +98,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/banner/{id}', 'EditBanner')->name('edit.banner');
         Route::post('/banner/update', 'UpdateBanner')->name('banner.update');
         Route::get('/delete/banner/{id}', 'DeleteBanner')->name('delete.banner');
-        
     });
 
     /// Features All Route 
@@ -127,41 +109,73 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/features/{id}', 'EditFeatures')->name('edit.features');
         Route::post('/features/update', 'UpdateFeatures')->name('features.update');
         Route::get('/delete/features/{id}', 'DeleteFeatures')->name('delete.features');
-        
     });
-    
 
-     /// Countups All Route 
-     Route::controller(CountupsController::class)->group(function () {
 
-     
+    /// Countups All Route 
+    Route::controller(CountupsController::class)->group(function () {
+
+
         Route::get('/edit/countups', 'EditCountups')->name('edit.countups');
         Route::post('/countups/update', 'UpdateCountups')->name('countups.update');
-       
-        
     });
 
-        /// clients All Route 
-        Route::controller(ClientsController::class)->group(function () {
+    /// clients All Route 
+    Route::controller(ClientsController::class)->group(function () {
 
-            Route::get('/all/clients', 'AllClients')->name('all.clients');
-            Route::get('/add/clients', 'AddClients')->name('add.clients');
-            Route::post('/clients/store', 'StoreClients')->name('clients.store');
-            Route::get('/edit/clients/{id}', 'EditClients')->name('edit.clients');
-            Route::post('/clients/update', 'UpdateClients')->name('clients.update');
-            Route::get('/delete/clients/{id}', 'DeleteClients')->name('delete.clients');
-            
-        });
+        Route::get('/all/clients', 'AllClients')->name('all.clients');
+        Route::get('/add/clients', 'AddClients')->name('add.clients');
+        Route::post('/clients/store', 'StoreClients')->name('clients.store');
+        Route::get('/edit/clients/{id}', 'EditClients')->name('edit.clients');
+        Route::post('/clients/update', 'UpdateClients')->name('clients.update');
+        Route::get('/delete/clients/{id}', 'DeleteClients')->name('delete.clients');
+    });
 
-          /// testmonials All Route 
-          Route::controller(TestmonialsController::class)->group(function () {
+    /// testmonials All Route 
+    Route::controller(TestmonialsController::class)->group(function () {
 
-            Route::get('/all/testmonials', 'AllTestmonials')->name('all.testmonials');
-            Route::get('/add/testmonials', 'AddTestmonials')->name('add.testmonials');
-            Route::post('/testmonials/store', 'StoreTestmonials')->name('testmonials.store');
-            Route::get('/edit/testmonials/{id}', 'EditTestmonials')->name('edit.testmonials');
-            Route::post('/testmonials/update', 'UpdateTestmonials')->name('testmonials.update');
-            Route::get('/delete/testmonials/{id}', 'DeleteTestmonials')->name('delete.testmonials');
-            
-        });
+        Route::get('/all/testmonials', 'AllTestmonials')->name('all.testmonials');
+        Route::get('/add/testmonials', 'AddTestmonials')->name('add.testmonials');
+        Route::post('/testmonials/store', 'StoreTestmonials')->name('testmonials.store');
+        Route::get('/edit/testmonials/{id}', 'EditTestmonials')->name('edit.testmonials');
+        Route::post('/testmonials/update', 'UpdateTestmonials')->name('testmonials.update');
+        Route::get('/delete/testmonials/{id}', 'DeleteTestmonials')->name('delete.testmonials');
+    });
+
+    ///About us Backend
+    Route::controller(AboutUsController::class)->group(function () {
+        Route::get('/edit/about_us/banner', 'EditAboutUsBanner')->name('edit.about.us.banner');
+        Route::post('/about_us/banner/update', 'UpdateAboutUsBanner')->name('about.us.banner.update');
+        Route::get('/edit/pie/chart', 'EditPieChart')->name('edit.pie.chart');
+        Route::post('/pie/chart/update', 'UpdatePieChart')->name('pie.chart.update');
+
+        Route::get('/all/pie/chart', 'AllPieCharts')->name('all.pie.chart');
+        Route::get('/add/pie/chart', 'AddPieChart')->name('add.pie.chart');
+        Route::post('/pie/chart/store', 'StorePieChart')->name('pie.chart.store');
+        Route::get('/edit/pie/chart/approach/{id}', 'EditPieChartApproach')->name('edit.pie.chart.approach');
+        Route::post('/pie/chart/approach/update', 'UpdatePieChartApproach')->name('pie.chart.update.approach');
+        Route::get('/delete/pie/chart/{id}', 'DeletePieChart')->name('delete.pie.chart');
+
+
+    });
+
+    
 }); // End Admin Group Middleware 
+
+
+///////////////Admin Login Pagecontroller//////////////////////////
+
+Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+
+///////////////////FRONTEND METHODS////////////////////////////////////////////////
+
+/// Frontend Contact us 
+Route::controller(ContactController::class)->group(function () {
+    Route::get('/contact', 'ContactUs')->name('contact.us');
+    Route::post('/store/contact', 'StoreContactUs')->name('store.contact');
+});
+
+/// Frontend About us 
+Route::controller(AboutUsController::class)->group(function () {
+    Route::get('/about_us', 'AboutUs')->name('about.us');
+});
