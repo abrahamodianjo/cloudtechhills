@@ -4,9 +4,11 @@
     @php
         $Aboutusbanner = App\Models\Aboutus::find(1);
         $piechart = App\Models\PieChart::find(1);
+        $whoweare = App\Models\WhoWeAre::find(1);
         $piechartapproach = App\Models\PieChartApproach::latest()->get();
         $clients = App\Models\Clients::latest()->get();
         $team = App\Models\Team::latest()->get();
+        $testmonials = App\Models\Testmonials::latest()->get();
     @endphp
 
     <div class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6"
@@ -68,38 +70,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-12">
-                    <img src="http://via.placeholder.com/570x490" class="rounded-border shadow-primary" alt="">
+                    <img src="{{ asset($whoweare->image) }}" class="rounded-border shadow-primary" alt="">
                 </div>
                 <div class="col-md-6 col-sm-6 col-12">
                     <div class="pl-30-md mt-10">
                         <div class="section-heading">
-                            <small class="uppercase">Who we are</small>
-                            <h4 class="semi-bold font-size-35">We're knowledgeable about making benefits higher</h4>
+                            <small class="uppercase">{{ $whoweare->caption }}</small>
+                            <h4 class="semi-bold font-size-35">{{ $whoweare->title }}</h4>
                         </div>
                         <div class="text-content mt-15">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequa</p>
+                            <p>{{ $whoweare->description }}</p>
                         </div>
                         <div class="row mt-20">
                             <div class="col-md-6 col-sm-6 col-12">
                                 <div class="features-box-3 text-left">
                                     <div class="features-box-3-icon">
-                                        <i class="icon-search-2"></i>
+                                        <i class="{{ $whoweare->icon_1 }}"></i>
                                     </div>
-                                    <h4>Business Development</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                        incididunt.</p>
+                                    <h4>{{ $whoweare->icon_1_title }}</h4>
+                                    <p>{{ $whoweare->icon_1_description }}</p>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-12">
                                 <div class="features-box-3 text-left">
                                     <div class="features-box-3-icon">
-                                        <i class="icon-curriculum2"></i>
+                                        <i class="{{ $whoweare->icon_2 }}"></i>
                                     </div>
-                                    <h4>Risk Management</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                        incididunt.</p>
+                                    <h4>{{ $whoweare->icon_2_title }}</h4>
+                                    <p>{{ $whoweare->icon_1_description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -114,35 +112,16 @@
     <div class="section-block primary-bg background-shape-3">
         <div class="container">
             <div class="owl-carousel owl-theme" id="testmonials-parallax">
+                @foreach( $testmonials as $item)
                 <div class="testmonial-parallax center-holder">
                     <div class="testmonial-parallax-text">
                         <h6>“</h6>
-                        <p>I love those who can smile in trouble, who can gather strength from distress, and grow brave by
-                            reflection. 'Tis the business of little minds to shrink, but they whose heart is firm.</p>
-                        <h4>Isabelle Hart</h4>
-                        <strong>Business Broker</strong>
+                        <p>{{ $item->description }}</p>
+                        <h4>{{ $item->name }}</h4>
+                        <strong>{{ $item->position }}</strong>
                     </div>
                 </div>
-
-                <div class="testmonial-parallax center-holder">
-                    <div class="testmonial-parallax-text">
-                        <h6>“</h6>
-                        <p>I love those who can smile in trouble, who can gather strength from distress, and grow brave by
-                            reflection. 'Tis the business of little minds to shrink, but they whose heart is firm.</p>
-                        <h4>Isabelle Hart</h4>
-                        <strong>Business Broker</strong>
-                    </div>
-                </div>
-
-                <div class="testmonial-parallax center-holder">
-                    <div class="testmonial-parallax-text">
-                        <h6>“</h6>
-                        <p>I love those who can smile in trouble, who can gather strength from distress, and grow brave by
-                            reflection. 'Tis the business of little minds to shrink, but they whose heart is firm.</p>
-                        <h4>Isabelle Hart</h4>
-                        <strong>Business Broker</strong>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

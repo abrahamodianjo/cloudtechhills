@@ -31,7 +31,8 @@
             <ul>
                 <li> <a href="{{ route('all.banner') }}"><i class='bx bx-radio-circle'></i> Banner </a></li>
                 <li> <a href="{{ route('all.features') }}"><i class='bx bx-radio-circle'></i> Features </a></li>
-                <li> <a href="{{ route('edit.countups') }}"><i class='bx bx-radio-circle'></i> Count up section </a></li>
+                <li> <a href="{{ route('edit.countups') }}"><i class='bx bx-radio-circle'></i> Count up section </a>
+                </li>
                 <li> <a href="{{ route('all.clients') }}"><i class='bx bx-radio-circle'></i>Our Clients</a></li>
                 <li> <a href="{{ route('all.team') }}"><i class='bx bx-radio-circle'></i>Team Members </a></li>
                 <li> <a href="{{ route('all.plan') }}"><i class='bx bx-radio-circle'></i>Membership Plans </a></li>
@@ -55,7 +56,7 @@
                         <div><i class='bx bx-radio-circle'></i>
                         </div>
                         <div class="menu-title">Pie Chart Area</div>
-                    </a> 
+                    </a>
                     <ul>
                         <li>
                             <a href="{{ route('all.pie.chart') }}"><i class='bx bx-radio-circle'></i> Pie Chart </a>
@@ -63,9 +64,10 @@
                         <li>
                             <a href="{{ route('edit.pie.chart') }}"><i class='bx bx-radio-circle'></i> Short Note </a>
                         </li>
-                        
+
                     </ul>
                 </li>
+                <li> <a href="{{ route('all.who.we.are') }}"><i class='bx bx-radio-circle'></i>Who we are </a></li>
             </ul>
         </li>
 

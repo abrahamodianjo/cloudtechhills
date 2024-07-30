@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\ClientsController;
 use App\Http\Controllers\ParallaxController;
 use App\Http\Controllers\TestmonialsController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\WhoWeAreController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/site/update', 'SiteUpdate')->name('site.update');
         // contact message admin view
         Route::get('/contact/message', 'AdminContactMessage')->name('contact.message');
+    });
+    /// Site Setting All Route 
+    Route::controller(WhoWeAreController::class)->group(function () {
+
+        Route::get('/who/we/are/setting', 'WhoWeAreSetting')->name('all.who.we.are');
+        Route::post('/who/we/are/setting/update', 'WhoWeAreUpdate')->name('who.we.are.update');
     });
 
     /// Parallax Setting All Route 
@@ -155,11 +162,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/pie/chart/approach/{id}', 'EditPieChartApproach')->name('edit.pie.chart.approach');
         Route::post('/pie/chart/approach/update', 'UpdatePieChartApproach')->name('pie.chart.update.approach');
         Route::get('/delete/pie/chart/{id}', 'DeletePieChart')->name('delete.pie.chart');
-
-
     });
-
-    
 }); // End Admin Group Middleware 
 
 
