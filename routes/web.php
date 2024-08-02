@@ -15,6 +15,9 @@ use App\Http\Controllers\ParallaxController;
 use App\Http\Controllers\TestmonialsController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\WhoWeAreController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServiceBannerController;
+use App\Http\Controllers\ServiceViewController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [UserController::class, 'index']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -67,6 +69,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/parallax/setting', 'ParallaxSetting')->name('parallax.setting');
         Route::post('/parallax/update', 'ParallaxUpdate')->name('parallax.update');
     });
+
+      
+
 }); //End middleware Admin Group Controller
 
 ///////Admin Group Middleware //////////////////////////////////////////////////////////////////
@@ -82,6 +87,24 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/team/{id}', 'EditTeam')->name('edit.team');
         Route::post('/team/update', 'UpdateTeam')->name('team.update');
         Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
+    });
+
+    ///Services us Backend
+    Route::controller(ServiceController::class)->group(function () {
+        Route::get('/all/services', 'AllServices')->name('all.services');
+        Route::get('/add/services', 'AddServices')->name('add.services');
+        Route::post('/store/service', 'StoreServices')->name('store.services');
+        Route::get('/edit/service/{id}', 'EditServices')->name('edit.services');
+        Route::post('/update/service', 'UpdateServices')->name('update.services');
+        Route::get('/delete/service/{id}', 'DeleteServices')->name('delete.services');
+    });
+
+    ///Services Banner us Backend
+    Route::controller(ServiceBannerController::class)->group(function () {
+       
+        Route::get('/edit/service/banner/', 'EditServicesBanner')->name('edit.servicesbanner');
+        Route::post('/update/service/banner', 'UpdateServicesBanner')->name('update.services.banner');
+   
     });
 
     /// Plan All Route 
@@ -155,7 +178,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/about_us/banner/update', 'UpdateAboutUsBanner')->name('about.us.banner.update');
         Route::get('/edit/pie/chart', 'EditPieChart')->name('edit.pie.chart');
         Route::post('/pie/chart/update', 'UpdatePieChart')->name('pie.chart.update');
-
         Route::get('/all/pie/chart', 'AllPieCharts')->name('all.pie.chart');
         Route::get('/add/pie/chart', 'AddPieChart')->name('add.pie.chart');
         Route::post('/pie/chart/store', 'StorePieChart')->name('pie.chart.store');
@@ -163,6 +185,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/pie/chart/approach/update', 'UpdatePieChartApproach')->name('pie.chart.update.approach');
         Route::get('/delete/pie/chart/{id}', 'DeletePieChart')->name('delete.pie.chart');
     });
+
+   
 }); // End Admin Group Middleware 
 
 
@@ -171,6 +195,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
 ///////////////////FRONTEND METHODS////////////////////////////////////////////////
+
+///Frontend home page////////////////////////
+Route::get('/', [UserController::class, 'index']);
 
 /// Frontend Contact us 
 Route::controller(ContactController::class)->group(function () {
@@ -182,3 +209,11 @@ Route::controller(ContactController::class)->group(function () {
 Route::controller(AboutUsController::class)->group(function () {
     Route::get('/about_us', 'AboutUs')->name('about.us');
 });
+
+/// Frontend Our Service
+Route::controller(ServiceViewController::class)->group(function () {
+    Route::get('/services', 'Services')->name('services.page');
+});
+
+
+
