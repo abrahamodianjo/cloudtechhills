@@ -11,14 +11,15 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 class ServiceBannerController extends Controller
 {
-    public function EditServicesBanner()
+    public function ServicesBannerSetting()
     {
         $servicesbanner = ServiceBanner::find(1);
+       
         return view('backend.servicesbanner.edit_banner_services', compact('servicesbanner'));
     } // End Method sitesetting Controller
 
     
-    public function UpdateServicesBanner(Request $request)
+    public function ServicesBannerUpdate(Request $request)
     {
         $servicesbanner_id = $request->id;
         $servicesbanner = ServiceBanner::findOrFail($servicesbanner_id);
@@ -45,7 +46,7 @@ class ServiceBannerController extends Controller
             }
 
             $servicesbanner->caption = $request->caption;
-            $servicesbanner->decription = $request->decription;
+            $servicesbanner->decription = $request->description;
 
             $servicesbanner->save();
 

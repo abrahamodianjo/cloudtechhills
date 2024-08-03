@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service_banners', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('first_image')->nullable();
-            $table->string('second_image')->nullable();
-            $table->string('caption')->nullable();
-            $table->text('description')->nullable();
+            $table->string('post_id');
+            $table->string('name');
+            $table->string('email');
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_banners');
+        Schema::dropIfExists('comments');
     }
 };

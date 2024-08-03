@@ -25,10 +25,10 @@
                     <div class="col-lg-8">
                         <div class="card">
 
-                            <form action="{{ route('update.services.banner') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('services.banner.update') }}" method="post" enctype="multipart/form-data">
                                 @csrf
 
-                                <input type="hidden" name="id" value="{{ $services->id }}">
+                                <input type="hidden" name="id" value="{{ $servicesbanner->id }}">
 
                                 <div class="card-body">
                                     <div class="row mb-3">
@@ -36,7 +36,7 @@
                                             <h6 class="mb-0"> Caption</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" name="title" class="form-control"
+                                            <input type="text" name="caption" class="form-control"
                                                 value="{{ $servicesbanner->caption }}" />
                                         </div>
                                     </div>
@@ -45,8 +45,8 @@
                                             <h6 class="mb-0">Description</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" name="decription" class="form-control"
-                                                value="{{ $servicesbanner->decription }}" />
+                                            <input type="text" name="description" class="form-control"
+                                                value="{{ $servicesbanner->description }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -85,7 +85,7 @@
                                             <h6 class="mb-0"> </h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <img id="showImage" src="{{ asset($servicesbanner->image) }}" alt="Admin"
+                                            <img id="showImage" src="{{ asset($servicesbanner->second_image) }}" alt="Admin"
                                                 class="rounded-circle p-1 bg-primary" width="80">
                                         </div>
                                     </div>

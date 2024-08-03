@@ -11,6 +11,8 @@ use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\FeaturesController;
 use App\Http\Controllers\Backend\CountupsController;
 use App\Http\Controllers\Backend\ClientsController;
+use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\CommentController;
 use App\Http\Controllers\ParallaxController;
 use App\Http\Controllers\TestmonialsController;
 use App\Http\Controllers\AboutUsController;
@@ -18,8 +20,8 @@ use App\Http\Controllers\WhoWeAreController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceBannerController;
 use App\Http\Controllers\ServiceViewController;
-
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SubscriptionController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -56,6 +58,13 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         // contact message admin view
         Route::get('/contact/message', 'AdminContactMessage')->name('contact.message');
     });
+
+    /// Site Setting All Route 
+    Route::controller(ServiceBannerController::class)->group(function () {
+
+        Route::get('/edit/banner/services/setting', 'ServicesBannerSetting')->name('services.banner.setting');
+        Route::post('/services/banner/update', 'ServicesBannerUpdate')->name('services.banner.update');
+    });
     /// Site Setting All Route 
     Route::controller(WhoWeAreController::class)->group(function () {
 
@@ -70,8 +79,26 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/parallax/update', 'ParallaxUpdate')->name('parallax.update');
     });
 
-      
+    // Blog Category All Route 
+    Route::controller(BlogController::class)->group(function () {
 
+        Route::get('/blog/category', 'BlogCategory')->name('blog.category');
+        Route::post('/store/blog/category', 'StoreBlogCategory')->name('store.blog.category');
+        Route::get('/edit/blog/category/{id}', 'EditBlogCategory');
+        Route::post('/update/blog/category', 'UpdateBlogCategory')->name('update.blog.category');
+        Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('delete.blog.category');
+    });
+
+    /// Blog Post All Route 
+    Route::controller(BlogController::class)->group(function () {
+
+        Route::get('/all/blog/post', 'AllBlogPost')->name('all.blog.post');
+        Route::get('/add/blog/post', 'AddBlogPost')->name('add.blog.post');
+        Route::post('/store/blog/post', 'StoreBlogPost')->name('store.blog.post');
+        Route::get('/edit/blog/post/{id}', 'EditBlogPost')->name('edit.blog.post');
+        Route::post('/update/blog/post', 'UpdateBlogPost')->name('update.blog.post');
+        Route::get('/delete/blog/post/{id}', 'DeleteBlogPost')->name('delete.blog.post');
+    });
 }); //End middleware Admin Group Controller
 
 ///////Admin Group Middleware //////////////////////////////////////////////////////////////////
@@ -99,13 +126,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/delete/service/{id}', 'DeleteServices')->name('delete.services');
     });
 
-    ///Services Banner us Backend
-    Route::controller(ServiceBannerController::class)->group(function () {
-       
-        Route::get('/edit/service/banner/', 'EditServicesBanner')->name('edit.servicesbanner');
-        Route::post('/update/service/banner', 'UpdateServicesBanner')->name('update.services.banner');
-   
-    });
+
 
     /// Plan All Route 
     Route::controller(PlanController::class)->group(function () {
@@ -185,8 +206,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/pie/chart/approach/update', 'UpdatePieChartApproach')->name('pie.chart.update.approach');
         Route::get('/delete/pie/chart/{id}', 'DeletePieChart')->name('delete.pie.chart');
     });
-
-   
 }); // End Admin Group Middleware 
 
 
@@ -215,5 +234,16 @@ Route::controller(ServiceViewController::class)->group(function () {
     Route::get('/services', 'Services')->name('services.page');
 });
 
+/// Frontend Blog  All Route 
+Route::controller(BlogController::class)->group(function () {
 
+    Route::get('/blog/details/{slug}', 'BlogDetails');
+    Route::get('/blog/cat/list/{id}', 'BlogCatList');
+    Route::get('/blog', 'BlogList')->name('blog.list');
+});
+/// Frontend Comment All Route 
+Route::controller(CommentController::class)->group(function () {
 
+    Route::post('/store/comment/', 'StoreComment')->name('store.comment');
+});
+Route::post('/subscribe', [SubscriptionController::class, 'subscribe'])->name('subscribe');
