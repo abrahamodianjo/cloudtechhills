@@ -50,7 +50,7 @@ class ClientsController extends Controller
     } // End Method 
 
     public function EditClients($id){
-        $banner = Clients::findOrFail($id);
+        $clients = Clients::findOrFail($id);
         return view('backend.clients.edit_clients',compact('clients'));
     }// End Method 
 

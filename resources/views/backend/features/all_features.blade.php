@@ -34,9 +34,9 @@
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>icon</th>
+                             
                                 <th>Title</th>
-                                <th>Sub title</th>
+                               
                                 
                                 <th>Action</th>
                             </tr>
@@ -45,9 +45,9 @@
                             @foreach ($features as $key => $item)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $item->icon }}</td>
+                                 
                                     <td>{{ $item->title }}</td>
-                                    <td>{{ $item->sub_title }}</td>
+                                   
                                    
                                     <td>
                                         <a href="{{ route('edit.features',$item->id) }}" class="font-22 text-warning "> <i class="fadeIn animated bx bx-edit-alt"></i></a>

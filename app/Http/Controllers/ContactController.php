@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Carbon\Carbon;
 use App\Models\Contact;
 
@@ -8,12 +9,14 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function ContactUs(){
+    public function ContactUs()
+    {
 
         return view('frontend.contact.contact_us');
     }
 
-    public function StoreContactUs(Request $request){
+    public function StoreContactUs(Request $request)
+    {
 
         Contact::insert([
             'name' => $request->name,
@@ -29,9 +32,10 @@ class ContactController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->back()->with($notification); 
+        return redirect()->back()->with($notification);
+    } // End Method
 
-     }// End Method
+ 
 
-     
+
 }

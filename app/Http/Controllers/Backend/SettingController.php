@@ -82,12 +82,39 @@ class SettingController extends Controller
 
     } // End Method 
 
+
+
+
+
+
+
+    //////////////View Contact Message////////////////////////////////
+
     public function AdminContactMessage()
     {
 
         $contact = Contact::latest()->get();
         return view('backend.contact.contact_message', compact('contact'));
     } // End Method
+
+    public function ViewMessage($id)
+    {
+        $contact = Contact::findOrFail($id);
+        return view('backend.contact.view_message', compact('contact'));
+    } //End Method
+
+    public function DeleteContactMessage($id)
+    {
+
+        Contact::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Message Deleted',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    } //End method
 
 
 }

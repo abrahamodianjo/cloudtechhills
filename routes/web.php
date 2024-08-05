@@ -57,6 +57,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/site/update', 'SiteUpdate')->name('site.update');
         // contact message admin view
         Route::get('/contact/message', 'AdminContactMessage')->name('contact.message');
+        Route::get('/view/contact/message/{id}', 'ViewMessage')->name('view.contact.message');
+        Route::get('/delete/contact/message/{id}', 'DeleteContactMessage')->name('delete.contact.message');
     });
 
     /// Site Setting All Route 

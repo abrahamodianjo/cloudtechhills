@@ -5,13 +5,13 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Edit Testmonial</div>
+           
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('all.testmonials')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Edit Testmonial</li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit {{$testmonials->name}}'s Testmonial</li>
                     </ol>
                 </nav>
             </div>
@@ -32,28 +32,24 @@
 
                                 <div class="card-body">
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0"> Name</h6>
-                                        </div>
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0">Name of the client</span>
                                             <input type="text" name="name" class="form-control"
                                                 value="{{ $testmonials->name }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Postion</h6>
-                                        </div>
+                                    
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0">Clients company name or position</span>
                                             <input type="text" name="position" class="form-control"
                                                 value="{{ $testmonials->position }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">description</h6>
-                                        </div>
+                                     
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0">Client's testimony</span>
                                             <textarea type="text" name="description" class="form-control"
                                                />{{ $testmonials->description }}</textarea>
                                         </div>
@@ -62,10 +58,9 @@
 
 
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Photo </h6>
-                                        </div>
+                                    
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0">Photo of client</span>
                                             <input class="form-control" name="image" type="file" id="image">
                                         </div>
                                     </div>

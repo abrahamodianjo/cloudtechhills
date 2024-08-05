@@ -5,11 +5,11 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Edit Banner</div>
+         
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('all.banner')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">Edit Banner</li>
                     </ol>
@@ -25,35 +25,31 @@
                     <div class="col-lg-8">
                         <div class="card">
 
-                            <form action="{{ route('plan.update') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('banner.update') }}" method="post" enctype="multipart/form-data">
                                 @csrf
 
                                 <input type="hidden" name="id" value="{{ $banner->id }}">
 
                                 <div class="card-body">
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0"> Title</h6>
-                                        </div>
+                                       
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0">Title of banner</span>
                                             <input type="text" name="title" class="form-control"
                                                 value="{{ $banner->title }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Sub title</h6>
-                                        </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" name="sub_title" class="form-control"
-                                                value="{{ $banner->sub_title }}" />
+                                            <span class="mb-0">Small description</span>
+                                            <textarea type="text" name="sub_title" class="form-control"   id="input11">{{ $banner->sub_title }}</textarea>
+                                            
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Photo </h6>
-                                        </div>
+                                 
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0">Image of Banner (size: 1500 x 630 )</span>
                                             <input class="form-control" name="image" type="file" id="image">
                                         </div>
                                     </div>

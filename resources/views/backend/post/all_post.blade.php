@@ -48,10 +48,10 @@
                                             style="width:70px; height:40px;"> </td>
                                     <td>
                                         <a href="{{ route('edit.blog.post', $item->id) }}"
-                                            class="btn btn-warning px-3 radius-30">
-                                            Edit</a>
+                                            class="font-22 text-warning">
+                                            <i class="fadeIn animated bx bx-edit-alt"></i></a>
                                         <a href="{{ route('delete.blog.post', $item->id) }}"
-                                            class="btn btn-danger px-3 radius-30" id="delete"> Delete</a>
+                                            class="font-22 text-danger" id="delete"> <i class="fadeIn animated bx bx-trash-alt"></i></a>
 
                                     </td>
                                 </tr>

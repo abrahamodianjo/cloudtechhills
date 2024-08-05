@@ -5,11 +5,11 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Edit Service</div>
+         
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('all.services')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">Edit Service</li>
                     </ol>
@@ -32,43 +32,31 @@
 
                                 <div class="card-body">
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0"> Title</h6>
-                                        </div>
                                         <div class="col-sm-9 text-secondary">
+                                            <span>Write Title</span>
                                             <input type="text" name="title" class="form-control"
                                                 value="{{ $services->title }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Description</h6>
-                                        </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" name="description" class="form-control"
-                                                value="{{ $services->description }}" />
+                                            <span>Write description</span>
+                                            <textarea type="text" name="description" class="form-control">{{ $services->description }}</textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Photo </h6>
-                                        </div>
+                                      
                                         <div class="col-sm-9 text-secondary">
+                                            <span>Insert photo/image</span>
                                             <input class="form-control" name="image" type="file" id="image">
                                         </div>
                                     </div>
-
-
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0"> </h6>
-                                        </div>
                                         <div class="col-sm-9 text-secondary">
                                             <img id="showImage" src="{{ asset($services->image) }}" alt="Admin"
                                                 class="rounded-circle p-1 bg-primary" width="80">
                                         </div>
                                     </div>
-
                                    <div class="row">
                                         <div class="col-sm-3"></div>
                                         <div class="col-sm-9 text-secondary">
@@ -77,11 +65,7 @@
                                     </div>
                                 </div>
                             </form>
-
                         </div>
-
-
-
                     </div>
                 </div>
             </div>

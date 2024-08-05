@@ -5,13 +5,13 @@
 <div class="page-content">
 				<!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Edit Blog Post</div>
+		
 					<div class="ps-3">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb mb-0 p-0">
-								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								<li class="breadcrumb-item"><a href="{{route('all.blog.post')}}"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Edit Blog Post</li>
+								<li class="breadcrumb-item active" aria-current="page">Edit News Post</li>
 							</ol>
 						</nav>
 					</div>
@@ -67,7 +67,7 @@
                         <input class="form-control" name="post_image" type="file" id="image">
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <label for="input1" class="form-label"> </label>
                         <img id="showImage" src="{{ asset($post->post_image) }}" alt="Admin" class="rounded-circle p-1 bg-primary" width="80">
                     </div>

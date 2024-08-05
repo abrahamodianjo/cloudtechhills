@@ -5,13 +5,13 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Edit Team</div>
+       
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{ route('all.team') }}"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Edit Team</li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit {{$team->name}}'s information</li>
                     </ol>
                 </nav>
             </div>
@@ -32,46 +32,41 @@
 
                                 <div class="card-body">
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0"> Name</h6>
-                                        </div>
+                                      
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0"> Team member's name </span>
                                             <input type="text" name="name" class="form-control"
                                                 value="{{ $team->name }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Postion</h6>
-                                        </div>
+                                  
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0"> His or Her Job Description</span>
                                             <input type="text" name="postion" class="form-control"
                                                 value="{{ $team->postion }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Facebook</h6>
-                                        </div>
+                                 
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0"> Facebook handle </span>
                                             <input type="text" name="facebook" class="form-control"
                                                 value="{{ $team->facebook }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Twitter</h6>
-                                        </div>
+                                      
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0"> Twitter handle </span>
                                             <input type="text" name="twitter" class="form-control"
                                                 value="{{ $team->twitter }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">linkedin</h6>
-                                        </div>
+                                      
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0"> Linkedin Profile</span>
                                             <input type="text" name="linkedin" class="form-control"
                                                 value="{{ $team->linkedin }}" />
                                         </div>
@@ -79,22 +74,19 @@
 
 
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Photo </h6>
-                                        </div>
+                                      
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0">Photograph Image (Size: 270 x 350) </span>
                                             <input class="form-control" name="image" type="file" id="image">
                                         </div>
                                     </div>
 
 
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0"> </h6>
-                                        </div>
+                                   
                                         <div class="col-sm-9 text-secondary">
                                             <img id="showImage" src="{{ asset($team->image) }}" alt="Admin"
-                                                class="rounded-circle p-1 bg-primary" width="80">
+                                                class="p-1 bg-primary" width="80">
                                         </div>
                                     </div>
 
@@ -102,7 +94,7 @@
 
 
                                     <div class="row">
-                                        <div class="col-sm-3"></div>
+                                     
                                         <div class="col-sm-9 text-secondary">
                                             <input type="submit" class="btn btn-primary px-4" value="Save Changes" />
                                         </div>

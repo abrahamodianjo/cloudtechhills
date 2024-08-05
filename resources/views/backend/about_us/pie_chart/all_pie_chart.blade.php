@@ -36,7 +36,7 @@
                                 <th>Sl</th>
                                 <th>percentage</th>
                                 <th>service</th>
-                                <th>approach</th>
+                               
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -46,7 +46,7 @@
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $item->percentage }}</td>
                                     <td>{{ $item->service }}</td>
-                                    <td>{{ $item->approach }}</td>
+                                  
                                     <td>
                                         <a href="{{ route('edit.pie.chart.approach',$item->id) }}" class="font-22 text-warning "> <i class="fadeIn animated bx bx-edit-alt"></i></a>
                                         <a href="{{ route('delete.pie.chart',$item->id) }}" class="font-22 text-danger" id="delete"><i class="fadeIn animated bx bx-trash-alt"></i></a>

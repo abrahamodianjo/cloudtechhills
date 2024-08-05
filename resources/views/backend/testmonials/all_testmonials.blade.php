@@ -39,8 +39,8 @@
                                 <th>Sl</th>
                                 <th>Image</th>
                                 <th>Name</th>
-                                <th>Postion</th>
-                                <th>description</th>
+                               
+                               
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -50,8 +50,8 @@
                                     <td>{{ $key + 1 }}</td>
                                     <td> <img src="{{ asset($item->image) }}" alt="" style="width:70px; height:40px;"> </td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->position }}</td>
-                                    <td>{{ $item->description }}</td>
+                                    
+                                   
                                     <td>
                                         <a href="{{ route('edit.testmonials',$item->id) }}" class="font-22 text-warning "> <i class="fadeIn animated bx bx-edit-alt"></i></a>
                                         <a href="{{ route('delete.testmonials',$item->id) }}" class="font-22 text-danger" id="delete"><i class="fadeIn animated bx bx-trash-alt"></i></a>

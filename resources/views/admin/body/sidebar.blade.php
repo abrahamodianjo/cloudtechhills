@@ -33,9 +33,7 @@
                 <li> <a href="{{ route('all.features') }}"><i class='bx bx-radio-circle'></i> Features </a></li>
                 <li> <a href="{{ route('edit.countups') }}"><i class='bx bx-radio-circle'></i> Count up section </a>
                 </li>
-                <li> <a href="{{ route('all.clients') }}"><i class='bx bx-radio-circle'></i>Our Clients</a></li>
-                <li> <a href="{{ route('all.team') }}"><i class='bx bx-radio-circle'></i>Team Members </a></li>
-                <li> <a href="{{ route('all.plan') }}"><i class='bx bx-radio-circle'></i>Membership Plans </a></li>
+
                 <li> <a href="{{ route('parallax.setting') }}"><i class='bx bx-radio-circle'></i>Parallax</a></li>
                 <li> <a href="{{ route('all.testmonials') }}"><i class='bx bx-radio-circle'></i>Testmonials </a></li>
             </ul>
@@ -58,16 +56,21 @@
                         <div class="menu-title">Pie Chart Area</div>
                     </a>
                     <ul>
-                        <li>
-                            <a href="{{ route('all.pie.chart') }}"><i class='bx bx-radio-circle'></i> Pie Chart </a>
-                        </li>
+
                         <li>
                             <a href="{{ route('edit.pie.chart') }}"><i class='bx bx-radio-circle'></i> Short Note </a>
                         </li>
+                        <li>
+                            <a href="{{ route('all.pie.chart') }}"><i class='bx bx-radio-circle'></i> Pie Chart </a>
+                        </li>
+
 
                     </ul>
                 </li>
+                <li> <a href="{{ route('all.clients') }}"><i class='bx bx-radio-circle'></i>Our Clients</a></li>
                 <li> <a href="{{ route('all.who.we.are') }}"><i class='bx bx-radio-circle'></i>Who we are </a></li>
+                <li> <a href="{{ route('all.team') }}"><i class='bx bx-radio-circle'></i>Team Members </a></li>
+
             </ul>
         </li>
 
@@ -79,8 +82,10 @@
                 <div class="menu-title">Services</div>
             </a>
             <ul>
+                <li> <a href="{{ route('all.plan') }}"><i class='bx bx-radio-circle'></i>Membership Plans </a></li>
                 <li> <a href="{{ route('all.services') }}"><i class='bx bx-radio-circle'></i>Services List </a>
-                <li> <a href="{{ route('services.banner.setting') }}"><i class='bx bx-radio-circle'></i>Services Banner </a>
+                <li> <a href="{{ route('services.banner.setting') }}"><i class='bx bx-radio-circle'></i>Services Banner
+                    </a>
             </ul>
         </li>
 
@@ -94,30 +99,27 @@
                 <div class="menu-title">News</div>
             </a>
             <ul>
-                <li> <a href="{{ route('all.blog.post') }}"><i class='bx bx-radio-circle'></i>Blog List</a>
+                <li> <a href="{{ route('all.blog.post') }}"><i class='bx bx-radio-circle'></i>News</a>
                 </li>
-                <li> <a href="{{ route('blog.category') }}"><i class='bx bx-radio-circle'></i>Blog Category </a>
+                <li> <a href="{{ route('blog.category') }}"><i class='bx bx-radio-circle'></i>News Category </a>
                 </li>
-                
+
             </ul>
         </li>
 
-
-
-
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="{{ route('site.setting') }}">
                 <div class="parent-icon"><i class='fadeIn animated bx bx-id-card'></i>
                 </div>
-                <div class="menu-title">Contact</div>
+                <div class="menu-title">information</div>
             </a>
-            <ul>
-                <li> <a href="{{ route('site.setting') }}"><i class='bx bx-radio-circle'></i>Site Setting</a>
-                </li>
-                <li> <a href="{{ route('contact.message') }}"><i class='bx bx-radio-circle'></i>Contact Us Messages
-                    </a>
-                </li>
-            </ul>
+        </li>
+        <li>
+            <a href="{{ route('contact.message') }}">
+                <div class="parent-icon"><i class='fadeIn animated bx bx-message'></i>
+                </div>
+                <div class="menu-title">Messages</div>
+            </a>
         </li>
 
     </ul>

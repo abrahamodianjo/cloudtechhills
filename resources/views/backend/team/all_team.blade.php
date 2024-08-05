@@ -40,9 +40,7 @@
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Postion</th>
-                                <th>Facebook</th>
-                                <th>twitter</th>
-                                <th>Linkedin</th>
+                               
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -53,9 +51,7 @@
                                     <td> <img src="{{ asset($item->image) }}" alt="" style="width:70px; height:40px;"> </td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->postion }}</td>
-                                    <td>{{ $item->facebook }}</td>
-                                    <td>{{ $item->twitter }}</td>
-                                    <td>{{ $item->linkedin }}</td>
+                                    
                                     <td>
                                         <a href="{{ route('edit.team',$item->id) }}" class="font-22 text-warning "> <i class="fadeIn animated bx bx-edit-alt"></i></a>
                                         <a href="{{ route('delete.team',$item->id) }}" class="font-22 text-danger" id="delete"><i class="fadeIn animated bx bx-trash-alt"></i></a>

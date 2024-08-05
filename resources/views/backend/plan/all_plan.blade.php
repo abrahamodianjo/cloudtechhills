@@ -36,12 +36,7 @@
                                 <th>Sl</th>
                                 <th>Name</th>
                                 <th>amount</th>
-                                <th>first title</th>
-                                <th>second title</th>
-                                <th>third title</th>
-                                <th>forth title</th>
-                                <th>fifth title</th>
-                                <th>sixth title</th>
+                               
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -51,12 +46,7 @@
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->amount }}</td>
-                                    <td>{{ $item->title_1 }}</td>
-                                    <td>{{ $item->title_2 }}</td>
-                                    <td>{{ $item->title_3 }}</td>
-                                    <td>{{ $item->title_4 }}</td>
-                                    <td>{{ $item->title_5 }}</td>
-                                    <td>{{ $item->title_6 }}</td>
+                                    
                                     <td>
                                         <a href="{{ route('edit.plan',$item->id) }}" class="font-22 text-warning "> <i class="fadeIn animated bx bx-edit-alt"></i></a>
                                         <a href="{{ route('delete.plan',$item->id) }}" class="font-22 text-danger" id="delete"><i class="fadeIn animated bx bx-trash-alt"></i></a>

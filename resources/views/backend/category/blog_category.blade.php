@@ -7,16 +7,16 @@
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('blog.category')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">All Blog Category</li>
+                        <li class="breadcrumb-item active" aria-current="page"> News Category</li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
-                        Blog Category</button>
+                         Category</button>
                 </div>
             </div>
         </div>
@@ -44,10 +44,10 @@
                                     <td>{{ $item->category_name }}</td>
                                     <td>{{ $item->category_slug }}</td>
                                     <td>
-                                        <button type="button" class="btn btn-warning px-3 radius-30" data-bs-toggle="modal"
+                                        <a font-22 text-warning class=" font-22 text-warning px-3  " data-bs-toggle="modal"
                                             data-bs-target="#category" id="{{ $item->id }}"
                                             onclick="categoryEdit(this.id)"><i
-                                                class="fadeIn animated bx bx-edit-alt"></i></button>
+                                                class="fadeIn animated bx bx-edit-alt"></i></a>
                                         <a href="{{ route('delete.blog.category', $item->id) }}" class="font-22 text-danger"
                                             id="delete"><i class="fadeIn animated bx bx-trash-alt"></i></a>
 

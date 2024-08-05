@@ -5,13 +5,13 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Update Parallax Setting </div>
+            
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('parallax.setting')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Update Parallax Setting </li>
+                        <li class="breadcrumb-item active" aria-current="page"> Parallax Setting </li>
                     </ol>
                 </nav>
             </div>
@@ -32,29 +32,25 @@
 
                                 <div class="card-body">
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0"> caption </h6>
-                                        </div>
+                                     
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0">Caption</span>
                                             <input type="text" name="caption" class="form-control"
                                                 value="{{ $parallax->caption }}" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">title</h6>
-                                        </div>
+                                    
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" name="title" class="form-control"
-                                                value="{{ $parallax->title }}" />
+                                            <span class="mb-0">Title of parallax section</span>
+                                            <textarea type="text" name="title" class="form-control"  id="input11"> {{ $parallax->title }}</textarea>
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0"> Image </h6>
-                                        </div>
+                                     
                                         <div class="col-sm-9 text-secondary">
+                                            <span class="mb-0">Photo for parallax section</span>
                                             <input type="file" name="image" class="form-control" />
                                             <br />
 

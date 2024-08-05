@@ -9,7 +9,7 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">All Contact Message </li>
+                        <li class="breadcrumb-item active" aria-current="page"> Messages </li>
                     </ol>
                 </nav>
             </div>
@@ -34,9 +34,9 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th>Subject</th>
-                                <th>Message</th>
+
                                 <th>Time</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,9 +46,15 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->phone }}</td>
-                                    <td>{{ $item->subject }}</td>
-                                    <td>{{ $item->message }}</td>
+
                                     <td>{{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</td>
+                                    <td><a href="{{ route('view.contact.message', $item->id) }}"
+                                            class="font-22 text-primary "> <i
+                                                class="fadeIn animated bx bx-message"></i></a>
+                                    <a href="{{ route('delete.contact.message', $item->id) }}"
+                                            class="font-22 text-danger" id="delete"><i
+                                                class="fadeIn animated bx bx-trash-alt"></i></a></td>
+
 
                                 </tr>
                             @endforeach

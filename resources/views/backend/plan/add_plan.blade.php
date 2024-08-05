@@ -5,7 +5,7 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Add Plan</div>
+          
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
@@ -30,65 +30,50 @@
 
                                 <div class="card-body">
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0"> Name</h6>
-                                        </div>
+                                  
                                         <div class="form-group col-sm-9 text-secondary">
+                                            <span class="mb-0">1. Name of plan offer</span>
                                             <input type="text" name="name" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Amount</h6>
-                                        </div>
-                                        <div class="form-group col-sm-9 text-secondary">
+                                    <div class="form-group col-sm-9 text-secondary">
+                                            <span class="mb-0">2. Amount of money monthly</span>
                                             <input type="text" name="amount" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">title_1</h6>
-                                        </div>
-                                        <div class="form-group col-sm-9 text-secondary">
+                                    <div class="form-group col-sm-9 text-secondary">
+                                            <span class="mb-0">3. What plan do you Offer as a service <br> (you can add up to six monthly services)</span>
                                             <input type="text" name="title_1" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">title_2</h6>
-                                        </div>
+                                       
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" name="title_2" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">title_3</h6>
-                                        </div>
+                                      
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" name="title_3" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">title_4</h6>
-                                        </div>
+                                     
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" name="title_4" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">title_5</h6>
-                                        </div>
+                                   
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" name="title_5" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">title_6</h6>
-                                        </div>
+                                     
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" name="title_6" class="form-control" />
                                         </div>

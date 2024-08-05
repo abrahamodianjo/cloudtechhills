@@ -5,11 +5,11 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Add Feature</div>
+            
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('all.features')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">Add Feature</li>
                     </ol>
@@ -30,27 +30,25 @@
 
                                 <div class="card-body">
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0"> icon code</h6>
-                                        </div>
+                                        
                                         <div class="form-group col-sm-9 text-secondary">
+                                            <span class="mb-0">Icon code</span>
                                             <input type="text" name="icon" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">title</h6>
-                                        </div>
+                                       
                                         <div class="form-group col-sm-9 text-secondary">
+                                            <span class="mb-0">Title of feature</span>
                                             <input type="text" name="title" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">sub title</h6>
-                                        </div>
+                                        
                                         <div class="form-group col-sm-9 text-secondary">
-                                            <input type="text" name="sub_title" class="form-control" />
+                                            <span class="mb-0">Sub-title of feature</span>
+                                            <textarea type="text" name="sub_title" class="form-control"  id="input11"></textarea>
+                                       
                                         </div>
                                     </div>
 
